@@ -1,0 +1,8 @@
+Do uruchomienia aplikacji potrzebujemy:
+Java SE 1.8+
+Server MySQL + MySQL Workbench
+Intellij IDEA
+
+1. Załadowanie pliku INS.SQL do MySQL Workbench
+2. Otwarcie aplikacji za pomocą pliku .jar lub ze środowiska Intellij klasą Main
+3. Domyślny Administraotr posiada dane login: Albert hasło: admin

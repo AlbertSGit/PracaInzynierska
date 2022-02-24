@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="junit5-4.2.9">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../Berlyngo/junit5-4.2.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../Berlyngo/junit-platform-commons-1.5.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../Berlyngo/junit-jupiter-api-5.5.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,2323 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="850.0" prefWidth="1200.0" style="-fx-background-color: #FFFFFF; -fx-border-color: #DDDDDD;" stylesheets="@application.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Controller">
+    <children>
+        <TabPane fx:id="adminTabPane" prefHeight="200.0" prefWidth="200.0" side="LEFT" style="-fx-background-color: #FFFFFF;" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <tabs>
+                <Tab text="Oddział">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <HBox layoutX="197.0" layoutY="81.0" prefHeight="760.0" prefWidth="957.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="197.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="81.0">
+                                    <children>
+                                        <TableView fx:id="branchTable" onMouseClicked="#loadBranchDataToForm" prefHeight="824.0" prefWidth="994.0" />
+                                        <VBox alignment="CENTER_LEFT" prefHeight="826.0" prefWidth="658.0" spacing="10.0">
+                                            <children>
+                                                <Label text="Id oddziału:">
+                                                    <font>
+                                                        <Font size="20.0" />
+                                                    </font>
+                                                </Label>
+                                                <TextField fx:id="inpBranchId" prefHeight="46.0" prefWidth="329.0" promptText="Id">
+                                                    <font>
+                                                        <Font size="20.0" />
+                                                    </font>
+                                                </TextField>
+                                                <Label text="Nazwa oddziału:">
+                                                    <font>
+                                                        <Font size="20.0" />
+                                                    </font>
+                                                </Label>
+                                                <TextField fx:id="inpBranch" prefHeight="46.0" prefWidth="329.0" promptText="Nazwa oddziału">
+                                                    <font>
+                                                        <Font size="20.0" />
+                                                    </font>
+                                                </TextField>
+                                                <Label text="Lokalizacja:">
+                                                    <font>
+                                                        <Font size="20.0" />
+                                                    </font>
+                                                </Label>
+                                                <TextField fx:id="inpLocation" promptText="Lokalizacja">
+                                                    <font>
+                                                        <Font size="20.0" />
+                                                    </font>
+                                                </TextField>
+                                                <Label text="Telefon:">
+                                                    <font>
+                                                        <Font size="20.0" />
+                                                    </font>
+                                                </Label>
+                                                <TextField fx:id="inpPhone" promptText="Telefon">
+                                                    <font>
+                                                        <Font size="20.0" />
+                                                    </font>
+                                                </TextField>
+                                                <Label text="Kraj:">
+                                                    <font>
+                                                        <Font size="20.0" />
+                                                    </font>
+                                                </Label>
+                                                <TextField fx:id="inpState" promptText="Kraj">
+                                                    <font>
+                                                        <Font size="20.0" />
+                                                    </font>
+                                                </TextField>
+                                                <GridPane>
+                                                    <columnConstraints>
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                    </columnConstraints>
+                                                    <rowConstraints>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints maxHeight="24.0" minHeight="7.0" prefHeight="21.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints minHeight="50.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    </rowConstraints>
+                                                    <children>
+                                                        <Button mnemonicParsing="false" onAction="#insertBranch" prefHeight="50.0" prefWidth="135.0" style="-fx-background-color: #16D2A5;" text="Dodaj" textFill="WHITE" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1">
+                                                            <font>
+                                                                <Font size="20.0" />
+                                                            </font>
+                                                        </Button>
+                                                        <Button mnemonicParsing="false" onAction="#updateBranch" prefHeight="50.0" prefWidth="135.0" style="-fx-background-color: #1D90F4;" text="Zaktualzuj" textFill="WHITE" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1">
+                                                            <font>
+                                                                <Font size="20.0" />
+                                                            </font>
+                                                        </Button>
+                                                        <Button mnemonicParsing="false" onAction="#deleteBranchUI" prefHeight="50.0" prefWidth="135.0" style="-fx-background-color: #E86441;" text="Usuń" textFill="WHITE" GridPane.rowIndex="3">
+                                                            <font>
+                                                                <Font size="20.0" />
+                                                            </font>
+                                                        </Button>
+                                                        <Button fx:id="btnReset" mnemonicParsing="false" onAction="#clearBranchForm" prefHeight="50.0" prefWidth="135.0" style="-fx-background-color: #A8A8A8;" text="Zresetuj" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                            <font>
+                                                                <Font size="20.0" />
+                                                            </font>
+                                                        </Button>
+                                                    </children>
+                                                </GridPane>
+                                                <Button fx:id="btnBranchExport" mnemonicParsing="false" onAction="#exportDataToExcel" prefHeight="50.0" prefWidth="684.0" style="-fx-background-color: #217346;" text="Eksport danych " textFill="WHITE">
+                                                    <font>
+                                                        <Font size="20.0" />
+                                                    </font>
+                                                </Button>
+                                            </children>
+                                            <padding>
+                                                <Insets left="15.0" right="15.0" />
+                                            </padding>
+                                        </VBox>
+                                    </children>
+                                </HBox>
+                                <HBox alignment="CENTER" layoutX="1009.0" layoutY="14.0" prefHeight="45.0" prefWidth="145.0" spacing="20.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+                                    <children>
+                                        <ImageView fx:id="btnMin1" fitHeight="35.0" fitWidth="35.0" onMouseClicked="#minMaxClose" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@min.png" />
+                                            </image>
+                                        </ImageView>
+                                        <ImageView fx:id="btnMax1" fitHeight="35.0" fitWidth="35.0" onMouseClicked="#minMaxClose" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@max.png" />
+                                            </image>
+                                        </ImageView>
+                                        <ImageView fx:id="btnClose1" fitHeight="35.0" fitWidth="35.0" onMouseClicked="#minMaxClose" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@close.png" />
+                                            </image>
+                                        </ImageView>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Polisa">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <VBox alignment="CENTER" layoutX="197.0" layoutY="60.0" prefHeight="778.0" prefWidth="957.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="197.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="60.0">
+                                    <children>
+                                        <TableView fx:id="policyTable" onMouseClicked="#loadPolicyDataToForm" prefHeight="889.0" prefWidth="958.0" />
+                                        <HBox prefHeight="826.0" prefWidth="949.0">
+                                            <children>
+                                                <VBox alignment="CENTER_LEFT" prefHeight="393.0">
+                                                    <children>
+                                                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="15.0">
+                                                            <children>
+                                                                <VBox prefHeight="76.0" prefWidth="130.0">
+                                                                    <children>
+                                                                        <Label text="Id polisy:">
+                                                                            <font>
+                                                                                <Font size="20.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                        <TextField fx:id="inpPID" prefHeight="46.0" prefWidth="329.0" promptText="Id polisy">
+                                                                            <font>
+                                                                                <Font size="20.0" />
+                                                                            </font>
+                                                                        </TextField>
+                                                                    </children>
+                                                                </VBox>
+                                                                <VBox prefHeight="100.0" prefWidth="227.0">
+                                                                    <children>
+                                                                        <Label text="Nazwa polisy:">
+                                                                            <font>
+                                                                                <Font size="20.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                        <TextField fx:id="inpPName" prefHeight="46.0" prefWidth="329.0" promptText="Nazwa polisy">
+                                                                            <font>
+                                                                                <Font size="20.0" />
+                                                                            </font>
+                                                                        </TextField>
+                                                                    </children>
+                                                                </VBox>
+                                                                <VBox prefHeight="100.0" prefWidth="350.0">
+                                                                    <children>
+                                                                        <Label text="Dodatkowe informacje:">
+                                                                            <font>
+                                                                                <Font size="20.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                        <TextField fx:id="inpPolicyDesc" prefHeight="46.0" prefWidth="329.0" promptText="Dodatkowe informacje">
+                                                                            <font>
+                                                                                <Font size="20.0" />
+                                                                            </font>
+                                                                        </TextField>
+                                                                    </children>
+                                                                </VBox>
+                                                            </children>
+                                                        </HBox>
+                                                        <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="15.0">
+                                                            <children>
+                                                                <VBox prefHeight="76.0" prefWidth="130.0">
+                                                                    <children>
+                                                                        <Label text="Temin polisy:">
+                                                                            <font>
+                                                                                <Font size="20.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                        <TextField fx:id="inpPTerm" promptText="Temin polisy">
+                                                                            <font>
+                                                                                <Font size="20.0" />
+                                                                            </font>
+                                                                        </TextField>
+                                                                    </children>
+                                                                </VBox>
+                                                                <VBox prefHeight="76.0" prefWidth="200.0">
+                                                                    <children>
+                                                                        <Label text="Cena polisy:">
+                                                                            <font>
+                                                                                <Font size="20.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                        <TextField fx:id="inpPAmount" promptText="Cena polisy">
+                                                                            <font>
+                                                                                <Font size="20.0" />
+                                                                            </font>
+                                                                        </TextField>
+                                                                    </children>
+                                                                </VBox>
+                                                                <VBox prefHeight="76.0" prefWidth="130.0">
+                                                                    <children>
+                                                                        <Label prefHeight="30.0" prefWidth="167.0" text="Kwota:">
+                                                                            <font>
+                                                                                <Font size="20.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                        <TextField fx:id="inpPFAmount" promptText="Kwota">
+                                                                            <font>
+                                                                                <Font size="20.0" />
+                                                                            </font>
+                                                                        </TextField>
+                                                                    </children>
+                                                                </VBox>
+                                                                <VBox prefHeight="89.0" prefWidth="129.0">
+                                                                    <children>
+                                                                        <Label prefHeight="30.0" prefWidth="145.0" text="Czas obowiązkowy:">
+                                                                            <font>
+                                                                                <Font size="20.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                        <TextField fx:id="inpPI" promptText="Czas obowiązkowy">
+                                                                            <font>
+                                                                                <Font size="20.0" />
+                                                                            </font>
+                                                                        </TextField>
+                                                                    </children>
+                                                                </VBox>
+                                                                <VBox prefHeight="76.0" prefWidth="130.0">
+                                                                    <children>
+                                                                        <Label text="Bonus okres:">
+                                                                            <font>
+                                                                                <Font size="20.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                        <TextField fx:id="inpBp" promptText="Bonus okres">
+                                                                            <font>
+                                                                                <Font size="20.0" />
+                                                                            </font>
+                                                                        </TextField>
+                                                                    </children>
+                                                                </VBox>
+                                                                <VBox prefHeight="200.0" prefWidth="130.0">
+                                                                    <children>
+                                                                        <Label text="Bonus czas:">
+                                                                            <font>
+                                                                                <Font size="20.0" />
+                                                                            </font>
+                                                                        </Label>
+                                                                        <TextField fx:id="inpBRT" promptText="Bonus czas">
+                                                                            <font>
+                                                                                <Font size="20.0" />
+                                                                            </font>
+                                                                        </TextField>
+                                                                    </children>
+                                                                </VBox>
+                                                            </children>
+                                                        </HBox>
+                                                        <GridPane prefHeight="102.0" prefWidth="628.0">
+                                                            <columnConstraints>
+                                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                            </columnConstraints>
+                                                            <rowConstraints>
+                                                                <RowConstraints maxHeight="54.0" minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
+                                                                <RowConstraints maxHeight="66.0" minHeight="50.0" prefHeight="59.0" vgrow="SOMETIMES" />
+                                                            </rowConstraints>
+                                                            <children>
+                                                                <Button mnemonicParsing="false" onAction="#insertPolicy" prefHeight="44.0" prefWidth="450.0" style="-fx-background-color: #16D2A5;" text="Dodaj" textFill="WHITE" GridPane.hgrow="ALWAYS">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </Button>
+                                                                <Button mnemonicParsing="false" onAction="#updatePolicyUI" prefHeight="50.0" prefWidth="450.0" style="-fx-background-color: #1D90F4;" text="Zaktualizuj" textFill="WHITE" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </Button>
+                                                                <Button mnemonicParsing="false" onAction="#deletePolicyUI" prefHeight="50.0" prefWidth="450.0" style="-fx-background-color: #E86441;" text="Usuń" textFill="WHITE" GridPane.rowIndex="1">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </Button>
+                                                                <Button fx:id="btnResetP" mnemonicParsing="false" onAction="#clearPolicyForm" prefHeight="50.0" prefWidth="450.0" style="-fx-background-color: #A8A8A8;" text="Zresetuj" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </Button>
+                                                            </children>
+                                                        </GridPane>
+                                                        <Button fx:id="btnPExport" mnemonicParsing="false" onAction="#exportDataToExcel" prefHeight="50.0" prefWidth="915.0" style="-fx-background-color: #217346;" text="Eksport danych" textFill="WHITE">
+                                                            <font>
+                                                                <Font size="20.0" />
+                                                            </font>
+                                                        </Button>
+                                                    </children>
+                                                    <padding>
+                                                        <Insets left="15.0" right="15.0" />
+                                                    </padding>
+                                                </VBox>
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+                                <HBox alignment="CENTER" layoutX="1009.0" layoutY="14.0" prefHeight="45.0" prefWidth="145.0" spacing="20.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+                                    <children>
+                                        <ImageView fx:id="btnMin11" fitHeight="35.0" fitWidth="35.0" onMouseClicked="#minMaxClose" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@min.png" />
+                                            </image>
+                                        </ImageView>
+                                        <ImageView fx:id="btnMax11" fitHeight="35.0" fitWidth="35.0" onMouseClicked="#minMaxClose" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@max.png" />
+                                            </image>
+                                        </ImageView>
+                                        <ImageView fx:id="btnClose11" fitHeight="35.0" fitWidth="35.0" onMouseClicked="#minMaxClose" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@close.png" />
+                                            </image>
+                                        </ImageView>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Menadżer">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <HBox layoutX="185.0" layoutY="81.0" prefHeight="760.0" prefWidth="957.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="197.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="81.0">
+                                    <children>
+                                        <TableView fx:id="managerTable" onMouseClicked="#loadManagerDataToForm" prefHeight="820.0" prefWidth="991.0" />
+                                        <VBox prefHeight="826.0" prefWidth="658.0" spacing="5.0">
+                                            <children>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="80.0" prefWidth="284.0" spacing="15.0">
+                                                    <children>
+                                                        <VBox prefHeight="200.0" prefWidth="100.0">
+                                                            <children>
+                                                                <Label text="Id:">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <TextField fx:id="inpMId" prefHeight="46.0" prefWidth="329.0" promptText="Id">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </TextField>
+                                                            </children>
+                                                        </VBox>
+                                                        <VBox prefHeight="100.0" prefWidth="175.0">
+                                                            <children>
+                                                                <Label text="Nazwa Menadżera:">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <TextField fx:id="inpMName" prefHeight="46.0" prefWidth="329.0" promptText="Nazwa Menadżera">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </TextField>
+                                                            </children>
+                                                        </VBox>
+                                                    </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="84.0" prefWidth="284.0" spacing="15.0">
+                                                    <children>
+                                                        <VBox prefHeight="200.0" prefWidth="100.0">
+                                                            <children>
+                                                                <Label text="Wiek:">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <TextField fx:id="inpMAge" promptText="Wiek">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </TextField>
+                                                            </children>
+                                                        </VBox>
+                                                        <VBox prefHeight="100.0" prefWidth="175.0">
+                                                            <children>
+                                                                <Label text="Imię Ojca:">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <TextField fx:id="inpMFather" promptText="Imię Ojca">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </TextField>
+                                                            </children>
+                                                        </VBox>
+                                                    </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="84.0" prefWidth="284.0" spacing="15.0">
+                                                    <children>
+                                                        <VBox prefHeight="200.0" prefWidth="100.0">
+                                                            <children>
+                                                                <Label text="Telefon:">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <TextField fx:id="inpMPhone" promptText="Telefon">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </TextField>
+                                                            </children>
+                                                        </VBox>
+                                                        <VBox prefHeight="100.0" prefWidth="175.0">
+                                                            <children>
+                                                                <Label text="Kwalifikacje:">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <TextField fx:id="inpMQuali" promptText="Kwalifikacje">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </TextField>
+                                                            </children>
+                                                        </VBox>
+                                                    </children>
+                                                </HBox>
+                                                <VBox prefHeight="71.0" prefWidth="284.0">
+                                                    <children>
+                                                        <Label text="Adres:">
+                                                            <font>
+                                                                <Font size="20.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <TextField fx:id="inpMAddr" promptText="Adres">
+                                                            <font>
+                                                                <Font size="20.0" />
+                                                            </font>
+                                                        </TextField>
+                                                    </children>
+                                                </VBox>
+                                                <VBox prefHeight="84.0" prefWidth="284.0">
+                                                    <children>
+                                                        <Label text="Oddział">
+                                                            <font>
+                                                                <Font size="20.0" />
+                                                            </font>
+                                                        </Label>
+                                                        <ComboBox fx:id="drpBranch" prefHeight="50.0" prefWidth="326.0" promptText="Wybierz oddział" />
+                                                    </children>
+                                                </VBox>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="84.0" prefWidth="284.0" spacing="15.0">
+                                                    <children>
+                                                        <VBox prefHeight="84.0" prefWidth="319.0">
+                                                            <children>
+                                                                <Label text="Hasło:">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <PasswordField fx:id="inpMPass" prefHeight="50.0" promptText="Hasło">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </PasswordField>
+                                                            </children>
+                                                        </VBox>
+                                                    </children>
+                                                </HBox>
+                                                <Label prefHeight="30.0" prefWidth="287.0" text="Płeć:">
+                                                    <font>
+                                                        <Font size="20.0" />
+                                                    </font>
+                                                </Label>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="45.0" prefWidth="284.0" spacing="20.0">
+                                                    <children>
+                                                        <RadioButton fx:id="rdMale" mnemonicParsing="false" style="-fx-background-color: #FFFFFF;" text="Male">
+                                                            <font>
+                                                                <Font size="20.0" />
+                                                            </font>
+                                                        </RadioButton>
+                                                        <RadioButton fx:id="rdFemale" mnemonicParsing="false" style="-fx-background-color: #FFFFFF;" text="Female">
+                                                            <font>
+                                                                <Font size="20.0" />
+                                                            </font>
+                                                        </RadioButton>
+                                                    </children>
+                                                </HBox>
+                                                <GridPane>
+                                                    <columnConstraints>
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                    </columnConstraints>
+                                                    <rowConstraints>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints maxHeight="24.0" minHeight="7.0" prefHeight="21.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints minHeight="50.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    </rowConstraints>
+                                                    <children>
+                                                        <Button mnemonicParsing="false" onAction="#insertManagerData" prefHeight="50.0" prefWidth="135.0" style="-fx-background-color: #16D2A5;" text="Dodaj" textFill="WHITE" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1">
+                                                            <font>
+                                                                <Font size="20.0" />
+                                                            </font>
+                                                        </Button>
+                                                        <Button mnemonicParsing="false" onAction="#updateManager" prefHeight="50.0" prefWidth="135.0" style="-fx-background-color: #1D90F4;" text="Zaktualizuj" textFill="WHITE" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1">
+                                                            <font>
+                                                                <Font size="20.0" />
+                                                            </font>
+                                                        </Button>
+                                                        <Button mnemonicParsing="false" onAction="#deleteManager" prefHeight="50.0" prefWidth="135.0" style="-fx-background-color: #E86441;" text="Usuń" textFill="WHITE" GridPane.rowIndex="3">
+                                                            <font>
+                                                                <Font size="20.0" />
+                                                            </font>
+                                                        </Button>
+                                                        <Button mnemonicParsing="false" onAction="#clearManagerForm" prefHeight="50.0" prefWidth="135.0" style="-fx-background-color: #A8A8A8;" text="Zresetuj" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                            <font>
+                                                                <Font size="20.0" />
+                                                            </font>
+                                                        </Button>
+                                                    </children>
+                                                </GridPane>
+                                                <Button fx:id="btnManagerExport" mnemonicParsing="false" onAction="#exportDataToExcel" prefHeight="50.0" prefWidth="278.0" style="-fx-background-color: #217346;" text="Eksport danych" textFill="WHITE">
+                                                    <font>
+                                                        <Font size="20.0" />
+                                                    </font>
+                                                </Button>
+                                            </children>
+                                            <padding>
+                                                <Insets left="15.0" right="15.0" />
+                                            </padding>
+                                        </VBox>
+                                    </children>
+                                </HBox>
+                                <HBox alignment="CENTER" layoutX="1010.0" layoutY="14.0" prefHeight="45.0" prefWidth="145.0" spacing="20.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+                                    <children>
+                                        <ImageView fx:id="btnMin111" fitHeight="35.0" fitWidth="35.0" onMouseClicked="#minMaxClose" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@min.png" />
+                                            </image>
+                                        </ImageView>
+                                        <ImageView fx:id="btnMax111" fitHeight="35.0" fitWidth="35.0" onMouseClicked="#minMaxClose" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@max.png" />
+                                            </image>
+                                        </ImageView>
+                                        <ImageView fx:id="btnClose111" fitHeight="35.0" fitWidth="35.0" onMouseClicked="#minMaxClose" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@close.png" />
+                                            </image>
+                                        </ImageView>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+        <AnchorPane fx:id="adminNavPanel" prefHeight="850.0" prefWidth="178.0" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #0244A6,#23A6D7);" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <VBox layoutY="268.0" prefHeight="312.0" prefWidth="205.0">
+                    <children>
+                        <HBox fx:id="btnBranch" alignment="CENTER" onMouseClicked="#changeAdminTabs" prefHeight="75.0" prefWidth="200.0" spacing="10.0" style="-fx-background-color: #16D2A5;">
+                            <children>
+                                <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@dept.png" />
+                                    </image>
+                                </ImageView>
+                                <Label prefHeight="50.0" prefWidth="120.0" text="Oddział" textFill="WHITE">
+                                    <font>
+                                        <Font size="20.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+                        <HBox fx:id="btnPolicy" alignment="CENTER" onMouseClicked="#changeAdminTabs" prefHeight="75.0" prefWidth="200.0" spacing="10.0">
+                            <children>
+                                <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@policy.png" />
+                                    </image>
+                                </ImageView>
+                                <Label prefHeight="50.0" prefWidth="120.0" text="Polisa" textFill="WHITE">
+                                    <font>
+                                        <Font size="20.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+                        <HBox fx:id="btnManager" alignment="CENTER" onMouseClicked="#changeAdminTabs" prefHeight="75.0" prefWidth="200.0" spacing="10.0">
+                            <children>
+                                <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@manager.png" />
+                                    </image>
+                                </ImageView>
+                                <Label prefHeight="50.0" prefWidth="120.0" text="Menadżer" textFill="WHITE">
+                                    <font>
+                                        <Font size="20.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+                <HBox alignment="CENTER" layoutY="783.0" onMouseClicked="#logout" prefHeight="51.0" prefWidth="205.0" spacing="10.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                    <children>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@logout.png" />
+                            </image>
+                        </ImageView>
+                        <Label prefHeight="50.0" prefWidth="81.0" text="Wyloguj" textFill="WHITE">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER" layoutY="23.0" prefHeight="73.0" prefWidth="205.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="23.0">
+                    <children>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@insurance.png" />
+                            </image>
+                        </ImageView>
+                        <VBox prefHeight="100.0" prefWidth="191.0">
+                            <children>
+                                <Label text="Firma" textFill="WHITE">
+                                    <font>
+                                        <Font size="30.0" />
+                                    </font>
+                                </Label>
+                                <Label text="Ubezpieczeniowa" textFill="WHITE" />
+                                <Label text="Panel admina" textFill="WHITE" />
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+            </children>
+        </AnchorPane>
+        <TabPane fx:id="managerTabPane" layoutX="30.0" layoutY="30.0" prefHeight="200.0" prefWidth="200.0" side="LEFT" style="-fx-background-color: #FFFFFF;" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <tabs>
+                <Tab text="Agent">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="792.0" prefWidth="1169.0">
+                            <children>
+                                <HBox layoutX="196.0" layoutY="50.0" prefHeight="760.0" prefWidth="958.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="197.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="50.0">
+                                    <children>
+                                        <TableView fx:id="managerAgentTable" onMouseClicked="#loadManagerAgentDataToForm" prefHeight="824.0" prefWidth="994.0" />
+                                        <VBox alignment="CENTER_LEFT" prefHeight="826.0" prefWidth="658.0" spacing="10.0">
+                                            <children>
+                                                <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+                                                    <children>
+                                                        <VBox prefHeight="94.0" prefWidth="70.0">
+                                                            <children>
+                                                                <Label text="Id:">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <TextField fx:id="inpMAgentID" prefHeight="46.0" prefWidth="100.0" promptText="Id">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </TextField>
+                                                            </children>
+                                                        </VBox>
+                                                        <VBox prefHeight="94.0" prefWidth="209.0">
+                                                            <children>
+                                                                <Label text="Kontakt:">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <TextField fx:id="inpMContact" prefHeight="46.0" prefWidth="329.0" promptText="Kontakt">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </TextField>
+                                                            </children>
+                                                        </VBox>
+                                                    </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+                                                    <children>
+                                                        <VBox prefHeight="100.0" prefWidth="130.0">
+                                                            <children>
+                                                                <Label text="Nazwa agenta:">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <TextField fx:id="inpMAgentName" prefHeight="46.0" prefWidth="329.0" promptText="Nazwa agenta">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </TextField>
+                                                            </children>
+                                                        </VBox>
+                                                        <VBox prefHeight="100.0" prefWidth="146.0">
+                                                            <children>
+                                                                <Label text="Imię ojca:">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <TextField fx:id="inpMFName" promptText="Imię ojca">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </TextField>
+                                                            </children>
+                                                        </VBox>
+                                                    </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+                                                    <children>
+                                                        <VBox prefHeight="100.0" prefWidth="130.0">
+                                                            <children>
+                                                                <Label text="Wiek:">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <TextField fx:id="inpM_Age" promptText="Wiek">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </TextField>
+                                                            </children>
+                                                        </VBox>
+                                                        <VBox prefHeight="100.0" prefWidth="154.0" spacing="10.0">
+                                                            <children>
+                                                                <Label text="Płeć:">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <RadioButton fx:id="rdMAgentMale" mnemonicParsing="false" text="Mężczyzna" />
+                                                                <RadioButton fx:id="rdMAgentFemale" mnemonicParsing="false" text="Kobieta" />
+                                                            </children>
+                                                        </VBox>
+                                                    </children>
+                                                </HBox>
+                                                <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+                                                    <children>
+                                                        <VBox prefHeight="200.0" prefWidth="130.0">
+                                                            <children>
+                                                                <Label text="Kwalifikacje:">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <TextField fx:id="inpMQua" promptText="Kwalifikacje">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </TextField>
+                                                            </children>
+                                                        </VBox>
+                                                        <VBox prefHeight="100.0" prefWidth="155.0">
+                                                            <children>
+                                                                <Label text="Zatrudnienie:">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <TextField fx:id="inpMOcc" promptText="Zatrudnienie">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </TextField>
+                                                            </children>
+                                                        </VBox>
+                                                    </children>
+                                                </HBox>
+                                                <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+                                                    <children>
+                                                        <VBox prefHeight="200.0" prefWidth="130.0">
+                                                            <children>
+                                                                <Label text="Adres:">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <TextField fx:id="inpM_Addr" promptText="Adres">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </TextField>
+                                                            </children>
+                                                        </VBox>
+                                                        <VBox prefHeight="100.0" prefWidth="155.0">
+                                                            <children>
+                                                                <Label text="Depozyt:">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <TextField fx:id="inpMDeposit" promptText="Depozyt">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </TextField>
+                                                            </children>
+                                                        </VBox>
+                                                    </children>
+                                                </HBox>
+                                                <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+                                                    <children>
+                                                        <VBox prefHeight="200.0" prefWidth="130.0">
+                                                            <children>
+                                                                <Label text="Menadżer:">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <ComboBox fx:id="drpMManager" prefHeight="46.0" prefWidth="124.0" promptText="Wybór Menadżera" />
+                                                            </children>
+                                                        </VBox>
+                                                        <VBox prefHeight="100.0" prefWidth="155.0">
+                                                            <children>
+                                                                <Label text="Hasło:">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <PasswordField fx:id="inpMPassword" prefHeight="46.0" prefWidth="148.0" promptText="Hasło" />
+                                                            </children>
+                                                        </VBox>
+                                                    </children>
+                                                </HBox>
+                                                <GridPane>
+                                                    <columnConstraints>
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                    </columnConstraints>
+                                                    <rowConstraints>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints maxHeight="24.0" minHeight="7.0" prefHeight="21.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints minHeight="50.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    </rowConstraints>
+                                                    <children>
+                                                        <Button mnemonicParsing="false" onAction="#insertManagerAgentData" prefHeight="50.0" prefWidth="135.0" style="-fx-background-color: #16D2A5;" text="Dodaj" textFill="WHITE" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1">
+                                                            <font>
+                                                                <Font size="20.0" />
+                                                            </font>
+                                                        </Button>
+                                                        <Button mnemonicParsing="false" onAction="#updateManagerAgent" prefHeight="50.0" prefWidth="135.0" style="-fx-background-color: #1D90F4;" text="Zaktualizuj" textFill="WHITE" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1">
+                                                            <font>
+                                                                <Font size="20.0" />
+                                                            </font>
+                                                        </Button>
+                                                        <Button mnemonicParsing="false" onAction="#deleteManagerAgent" prefHeight="50.0" prefWidth="135.0" style="-fx-background-color: #E86441;" text="Usuń" textFill="WHITE" GridPane.rowIndex="3">
+                                                            <font>
+                                                                <Font size="20.0" />
+                                                            </font>
+                                                        </Button>
+                                                        <Button fx:id="btnReset1" mnemonicParsing="false" onAction="#clearManagerAgentForm" prefHeight="50.0" prefWidth="135.0" style="-fx-background-color: #A8A8A8;" text="Zresetuj" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                            <font>
+                                                                <Font size="20.0" />
+                                                            </font>
+                                                        </Button>
+                                                    </children>
+                                                </GridPane>
+                                                <Button fx:id="btnMAgExport" mnemonicParsing="false" onAction="#exportDataToExcel" prefHeight="50.0" prefWidth="684.0" style="-fx-background-color: #217346;" text="Eksport danych" textFill="WHITE">
+                                                    <font>
+                                                        <Font size="20.0" />
+                                                    </font>
+                                                </Button>
+                                            </children>
+                                            <padding>
+                                                <Insets left="15.0" right="15.0" />
+                                            </padding>
+                                        </VBox>
+                                    </children>
+                                </HBox>
+                                <HBox alignment="CENTER" layoutX="955.0" layoutY="14.0" prefHeight="35.0" prefWidth="200.0" spacing="20.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+                                    <children>
+                                        <ImageView fx:id="btnMin2" fitHeight="35.0" fitWidth="35.0" onMouseClicked="#minMaxClose" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@min.png" />
+                                            </image>
+                                        </ImageView>
+                                        <ImageView fx:id="btnMax2" fitHeight="35.0" fitWidth="35.0" onMouseClicked="#minMaxClose" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@max.png" />
+                                            </image>
+                                        </ImageView>
+                                        <ImageView fx:id="btnClose2" fitHeight="35.0" fitWidth="35.0" onMouseClicked="#minMaxClose" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@close.png" />
+                                            </image>
+                                        </ImageView>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab fx:id="" text="Klient">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <HBox layoutY="58.0" prefHeight="760.0" prefWidth="958.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="197.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="58.0">
+                                    <children>
+                                        <TableView fx:id="managerCustomerTable" onMouseClicked="#loadManagerCustomerDataToForm" prefHeight="824.0" prefWidth="994.0" />
+                                        <VBox alignment="CENTER_LEFT" prefHeight="826.0" prefWidth="658.0" spacing="10.0">
+                                            <children>
+                                                <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+                                                    <children>
+                                                        <VBox prefHeight="94.0" prefWidth="70.0">
+                                                            <children>
+                                                                <Label text="Id:">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <TextField fx:id="inpMCusID" prefHeight="46.0" prefWidth="100.0" promptText="Id">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </TextField>
+                                                            </children>
+                                                        </VBox>
+                                                        <VBox prefHeight="94.0" prefWidth="209.0">
+                                                            <children>
+                                                                <Label text="Kontakt:">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <TextField fx:id="inpMCusPhno" prefHeight="46.0" prefWidth="329.0" promptText="Kontakt">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </TextField>
+                                                            </children>
+                                                        </VBox>
+                                                    </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+                                                    <children>
+                                                        <VBox prefHeight="100.0" prefWidth="130.0">
+                                                            <children>
+                                                                <Label text="Imię:">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <TextField fx:id="inpMCusName" prefHeight="46.0" prefWidth="329.0" promptText="Imię">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </TextField>
+                                                            </children>
+                                                        </VBox>
+                                                        <VBox prefHeight="100.0" prefWidth="146.0">
+                                                            <children>
+                                                                <Label text="Imię ojca:">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <TextField fx:id="inpMCusFname" promptText="Imię ojca">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </TextField>
+                                                            </children>
+                                                        </VBox>
+                                                    </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+                                                    <children>
+                                                        <VBox prefHeight="100.0" prefWidth="130.0">
+                                                            <children>
+                                                                <Label text="Wiek:">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <TextField fx:id="inpMCusAge" promptText="Wiek">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </TextField>
+                                                            </children>
+                                                        </VBox>
+                                                        <VBox prefHeight="100.0" prefWidth="154.0" spacing="10.0">
+                                                            <children>
+                                                                <Label text="Płeć:">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <RadioButton fx:id="rdCusMale" mnemonicParsing="false" text="Mężczyzna" />
+                                                                <RadioButton fx:id="rdCusFemale" mnemonicParsing="false" text="Kobieta" />
+                                                            </children>
+                                                        </VBox>
+                                                    </children>
+                                                </HBox>
+                                                <HBox prefHeight="82.0" prefWidth="281.0" spacing="5.0">
+                                                    <children>
+                                                        <VBox prefHeight="200.0" prefWidth="130.0">
+                                                            <children>
+                                                                <Label text="Kwalifikacje:">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <TextField fx:id="inpMCusQua" promptText="Kwalifikacje">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </TextField>
+                                                            </children>
+                                                        </VBox>
+                                                        <VBox prefHeight="100.0" prefWidth="155.0">
+                                                            <children>
+                                                                <Label text="Zatrudnienie:">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <TextField fx:id="inpMCusOcc" promptText="Zatrudnienie">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </TextField>
+                                                            </children>
+                                                        </VBox>
+                                                    </children>
+                                                </HBox>
+                                                <Label text="Adres:">
+                                                    <font>
+                                                        <Font size="20.0" />
+                                                    </font>
+                                                </Label>
+                                                <TextField fx:id="inpMCusAddr" promptText="Adres">
+                                                    <font>
+                                                        <Font size="20.0" />
+                                                    </font>
+                                                </TextField>
+                                                <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+                                                    <children>
+                                                        <VBox prefHeight="200.0" prefWidth="130.0">
+                                                            <children>
+                                                                <Label text="Agent:">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <ComboBox fx:id="drpMCusAgent" prefHeight="46.0" prefWidth="124.0" promptText="Wybór Agenta" />
+                                                            </children>
+                                                        </VBox>
+                                                        <VBox prefHeight="100.0" prefWidth="155.0">
+                                                            <children>
+                                                                <Label text="Hasło:">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <PasswordField fx:id="inpMCusPass" prefHeight="46.0" prefWidth="148.0" promptText="Hasło" />
+                                                            </children>
+                                                        </VBox>
+                                                    </children>
+                                                </HBox>
+                                                <GridPane>
+                                                    <columnConstraints>
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                    </columnConstraints>
+                                                    <rowConstraints>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints maxHeight="24.0" minHeight="7.0" prefHeight="21.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints minHeight="50.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    </rowConstraints>
+                                                    <children>
+                                                        <Button mnemonicParsing="false" onAction="#insertManagerCustomerData" prefHeight="50.0" prefWidth="135.0" style="-fx-background-color: #16D2A5;" text="Dodaj" textFill="WHITE" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1">
+                                                            <font>
+                                                                <Font size="20.0" />
+                                                            </font>
+                                                        </Button>
+                                                        <Button mnemonicParsing="false" onAction="#updateManagerCustomer" prefHeight="50.0" prefWidth="135.0" style="-fx-background-color: #1D90F4;" text="Zaktualizuj" textFill="WHITE" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1">
+                                                            <font>
+                                                                <Font size="20.0" />
+                                                            </font>
+                                                        </Button>
+                                                        <Button mnemonicParsing="false" onAction="#deleteManagerCustomer" prefHeight="50.0" prefWidth="135.0" style="-fx-background-color: #E86441;" text="Usuń" textFill="WHITE" GridPane.rowIndex="3">
+                                                            <font>
+                                                                <Font size="20.0" />
+                                                            </font>
+                                                        </Button>
+                                                        <Button mnemonicParsing="false" onAction="#clearManagerCustomerForm" prefHeight="50.0" prefWidth="135.0" style="-fx-background-color: #A8A8A8;" text="Zresetuj" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                            <font>
+                                                                <Font size="20.0" />
+                                                            </font>
+                                                        </Button>
+                                                    </children>
+                                                </GridPane>
+                                                <Button fx:id="btnMCusExport" mnemonicParsing="false" onAction="#exportDataToExcel" prefHeight="50.0" prefWidth="684.0" style="-fx-background-color: #217346;" text="Eksport danych" textFill="WHITE">
+                                                    <font>
+                                                        <Font size="20.0" />
+                                                    </font>
+                                                </Button>
+                                            </children>
+                                            <padding>
+                                                <Insets left="15.0" right="15.0" />
+                                            </padding>
+                                        </VBox>
+                                    </children>
+                                </HBox>
+                                <HBox alignment="CENTER" layoutX="955.0" layoutY="14.0" prefHeight="35.0" prefWidth="200.0" spacing="20.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+                                    <children>
+                                        <ImageView fx:id="btnMin3" fitHeight="35.0" fitWidth="35.0" onMouseClicked="#minMaxClose" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@min.png" />
+                                            </image>
+                                        </ImageView>
+                                        <ImageView fx:id="btnMax3" fitHeight="35.0" fitWidth="35.0" onMouseClicked="#minMaxClose" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@max.png" />
+                                            </image>
+                                        </ImageView>
+                                        <ImageView fx:id="btnClose3" fitHeight="35.0" fitWidth="35.0" onMouseClicked="#minMaxClose" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@close.png" />
+                                            </image>
+                                        </ImageView>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab fx:id="btnCusExport11" text="Polisa">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <HBox layoutY="56.0" prefHeight="760.0" prefWidth="958.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="197.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="56.0">
+                                    <children>
+                                        <TableView fx:id="managerCusPoliTable" onMouseClicked="#loadManagerCustomerPolicyDataToForm" prefHeight="824.0" prefWidth="994.0" />
+                                        <VBox alignment="CENTER_LEFT" prefHeight="826.0" prefWidth="658.0" spacing="10.0">
+                                            <children>
+                                                <HBox prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+                                                    <children>
+                                                        <VBox prefHeight="94.0" prefWidth="70.0">
+                                                            <children>
+                                                                <Label text="Id:">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <TextField fx:id="inpMCusPoliId" prefHeight="46.0" prefWidth="100.0" promptText="Id">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </TextField>
+                                                            </children>
+                                                        </VBox>
+                                                        <VBox prefHeight="200.0" prefWidth="130.0">
+                                                            <children>
+                                                                <Label text="Klient:">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <ComboBox fx:id="drpFrmMCUS" prefHeight="46.0" prefWidth="124.0" promptText="Wybierz Klienta" />
+                                                            </children>
+                                                        </VBox>
+                                                    </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+                                                    <children>
+                                                        <VBox prefHeight="200.0" prefWidth="130.0">
+                                                            <children>
+                                                                <Label text="Polisa:">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <ComboBox fx:id="drpFrmMPoli" prefHeight="46.0" prefWidth="124.0" promptText="Wybór polisy" />
+                                                            </children>
+                                                        </VBox>
+                                                        <VBox prefHeight="200.0" prefWidth="130.0">
+                                                            <children>
+                                                                <Label text="Typ polisy:">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <ComboBox fx:id="drpFrmMPoliType" prefHeight="46.0" prefWidth="124.0" promptText="Wybór typu polisy" />
+                                                            </children>
+                                                        </VBox>
+                                                    </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="5.0">
+                                                    <children>
+                                                        <VBox prefHeight="200.0" prefWidth="130.0">
+                                                            <children>
+                                                                <Label text="Agent:">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <ComboBox fx:id="drpFrmMAgent" prefHeight="46.0" prefWidth="124.0" promptText="Wybór agent" />
+                                                            </children>
+                                                        </VBox>
+                                                        <VBox prefHeight="200.0" prefWidth="130.0">
+                                                            <children>
+                                                                <Label text="Nominał:">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <TextField fx:id="inpMCusPNom" promptText="Nominał">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </TextField>
+                                                            </children>
+                                                        </VBox>
+                                                    </children>
+                                                </HBox>
+                                                <HBox prefHeight="82.0" prefWidth="281.0" spacing="5.0">
+                                                    <children>
+                                                        <VBox prefHeight="200.0" prefWidth="130.0">
+                                                            <children>
+                                                                <Label text="Relacja:">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <TextField fx:id="inpMCusPRela" promptText="Relacja">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </TextField>
+                                                            </children>
+                                                        </VBox>
+                                                        <VBox prefHeight="100.0" prefWidth="155.0">
+                                                            <children>
+                                                                <Label text="Kwota polisy:">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <TextField fx:id="inpMCusPPAmt" promptText="Kwota polisy">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </TextField>
+                                                            </children>
+                                                        </VBox>
+                                                    </children>
+                                                </HBox>
+                                                <HBox prefHeight="82.0" prefWidth="281.0" spacing="5.0">
+                                                    <children>
+                                                        <VBox prefHeight="200.0" prefWidth="130.0">
+                                                            <children>
+                                                                <Label text="Stawka:">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <TextField fx:id="inpMCusPRate" promptText="Stawka">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </TextField>
+                                                            </children>
+                                                        </VBox>
+                                                        <VBox prefHeight="100.0" prefWidth="155.0">
+                                                            <children>
+                                                                <Label text="Okres:">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <TextField fx:id="inpMCusPPrd" promptText="Okres">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </TextField>
+                                                            </children>
+                                                        </VBox>
+                                                    </children>
+                                                </HBox>
+                                                <HBox prefHeight="82.0" prefWidth="281.0" spacing="5.0">
+                                                    <children>
+                                                        <VBox prefHeight="200.0" prefWidth="130.0">
+                                                            <children>
+                                                                <Label text="Odsetki:">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <TextField fx:id="inpMCusPIntr" promptText="Odsetki">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </TextField>
+                                                            </children>
+                                                        </VBox>
+                                                        <VBox prefHeight="100.0" prefWidth="155.0">
+                                                            <children>
+                                                                <Label text="Kwota główna:">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <TextField fx:id="inpMCusPFaceAmt" promptText="Kwota główna">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </TextField>
+                                                            </children>
+                                                        </VBox>
+                                                    </children>
+                                                </HBox>
+                                                <GridPane>
+                                                    <columnConstraints>
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                    </columnConstraints>
+                                                    <rowConstraints>
+                                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints maxHeight="50.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints maxHeight="24.0" minHeight="7.0" prefHeight="21.0" vgrow="SOMETIMES" />
+                                                        <RowConstraints minHeight="50.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    </rowConstraints>
+                                                    <children>
+                                                        <Button mnemonicParsing="false" onAction="#insertManagerCustomerPolicyData" prefHeight="50.0" prefWidth="135.0" style="-fx-background-color: #16D2A5;" text="Dodaj" textFill="WHITE" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1">
+                                                            <font>
+                                                                <Font size="20.0" />
+                                                            </font>
+                                                        </Button>
+                                                        <Button mnemonicParsing="false" onAction="#updateManagerCustomerPolicyData" prefHeight="50.0" prefWidth="135.0" style="-fx-background-color: #1D90F4;" text="Zaktualizuj" textFill="WHITE" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1">
+                                                            <font>
+                                                                <Font size="20.0" />
+                                                            </font>
+                                                        </Button>
+                                                        <Button mnemonicParsing="false" onAction="#deleteManagerPolicyData" prefHeight="50.0" prefWidth="135.0" style="-fx-background-color: #E86441;" text="Usuń" textFill="WHITE" GridPane.rowIndex="3">
+                                                            <font>
+                                                                <Font size="20.0" />
+                                                            </font>
+                                                        </Button>
+                                                        <Button mnemonicParsing="false" onAction="#clearManagerCustomerPolicyForm" prefHeight="50.0" prefWidth="135.0" style="-fx-background-color: #A8A8A8;" text="Zresetuj" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                            <font>
+                                                                <Font size="20.0" />
+                                                            </font>
+                                                        </Button>
+                                                    </children>
+                                                </GridPane>
+                                                <Button fx:id="btnMCusPoliExport" mnemonicParsing="false" onAction="#exportDataToExcel" prefHeight="50.0" prefWidth="684.0" style="-fx-background-color: #217346;" text="Eksport danych" textFill="WHITE">
+                                                    <font>
+                                                        <Font size="20.0" />
+                                                    </font>
+                                                </Button>
+                                            </children>
+                                            <padding>
+                                                <Insets left="15.0" right="15.0" />
+                                            </padding>
+                                        </VBox>
+                                    </children>
+                                </HBox>
+                                <HBox alignment="CENTER" layoutX="955.0" layoutY="14.0" prefHeight="35.0" prefWidth="200.0" spacing="20.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+                                    <children>
+                                        <ImageView fx:id="btnMin4" fitHeight="35.0" fitWidth="35.0" onMouseClicked="#minMaxClose" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@min.png" />
+                                            </image>
+                                        </ImageView>
+                                        <ImageView fx:id="btnMax4" fitHeight="35.0" fitWidth="35.0" onMouseClicked="#minMaxClose" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@max.png" />
+                                            </image>
+                                        </ImageView>
+                                        <ImageView fx:id="btnClose4" fitHeight="35.0" fitWidth="35.0" onMouseClicked="#minMaxClose" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@close.png" />
+                                            </image>
+                                        </ImageView>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab fx:id="btnCusExport111" text="Płatność">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <HBox layoutX="311.0" layoutY="89.0" prefHeight="749.0" prefWidth="958.0" spacing="25.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="197.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="89.0">
+                                    <children>
+                                        <VBox alignment="CENTER_LEFT" prefHeight="733.0" prefWidth="505.0" spacing="10.0">
+                                            <children>
+                                                <Label text="Klient id polisy:">
+                                                    <font>
+                                                        <Font size="20.0" />
+                                                    </font>
+                                                </Label>
+                                                <ComboBox fx:id="drpMCusPPid" onAction="#loadPaymentDataToForm" prefHeight="50.0" prefWidth="250.0" />
+                                                <Label text="Kwota:">
+                                                    <font>
+                                                        <Font size="20.0" />
+                                                    </font>
+                                                </Label>
+                                                <TextField fx:id="inpCusPayAmt" prefHeight="50.0" prefWidth="488.0" promptText="Kwota">
+                                                    <font>
+                                                        <Font size="20.0" />
+                                                    </font>
+                                                </TextField>
+                                                <Button fx:id="btnPay" mnemonicParsing="false" onAction="#doPayment" style="-fx-background-color: #1D90F4;" text="Zapłać" textFill="WHITE">
+                                                    <font>
+                                                        <Font size="20.0" />
+                                                    </font>
+                                                </Button>
+                                            </children>
+                                        </VBox>
+                                        <VBox alignment="CENTER_LEFT" prefHeight="664.0" prefWidth="454.0" spacing="10.0">
+                                            <children>
+                                                <HBox fx:id="payHbox1" prefHeight="54.0" prefWidth="441.0" spacing="10.0">
+                                                    <children>
+                                                        <VBox prefHeight="76.0" prefWidth="145.0">
+                                                            <children>
+                                                                <Label text="Nazwa:">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <TextField fx:id="inpPCusName" prefHeight="50.0" promptText="Nazwa klienta">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </TextField>
+                                                            </children>
+                                                        </VBox>
+                                                        <VBox prefHeight="76.0" prefWidth="145.0">
+                                                            <children>
+                                                                <Label text="Polisa id:">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <TextField fx:id="inpCusPPid" prefHeight="50.0" promptText="Polisa id">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </TextField>
+                                                            </children>
+                                                        </VBox>
+                                                        <VBox prefHeight="76.0" prefWidth="145.0">
+                                                            <children>
+                                                                <Label text="Kwota polisy:">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <TextField fx:id="inpCusPPamt" prefHeight="50.0" promptText="Kwota polisy">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </TextField>
+                                                            </children>
+                                                        </VBox>
+                                                    </children>
+                                                </HBox>
+                                                <HBox fx:id="payHbox2" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                                                    <children>
+                                                        <VBox prefHeight="100.0" prefWidth="143.0">
+                                                            <children>
+                                                                <Label text="Typ polisy:">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <TextField fx:id="inpCusPPtype" prefHeight="50.0" promptText="Typ polisy">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </TextField>
+                                                            </children>
+                                                        </VBox>
+                                                        <VBox prefHeight="100.0" prefWidth="143.0">
+                                                            <children>
+                                                                <Label text="Zapłacono:">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <TextField fx:id="inpCusPPaidAmt" prefHeight="50.0" promptText="Zapłacono">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </TextField>
+                                                            </children>
+                                                        </VBox>
+                                                        <VBox prefHeight="100.0" prefWidth="137.0">
+                                                            <children>
+                                                                <Label text="Saldo:">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </Label>
+                                                                <TextField fx:id="inpCusPBamt" prefHeight="50.0" promptText="Saldo">
+                                                                    <font>
+                                                                        <Font size="20.0" />
+                                                                    </font>
+                                                                </TextField>
+                                                            </children>
+                                                        </VBox>
+                                                    </children>
+                                                </HBox>
+                                                <TextArea fx:id="txtPayment" prefHeight="420.0" prefWidth="441.0">
+                                                    <font>
+                                                        <Font size="20.0" />
+                                                    </font>
+                                                </TextArea>
+                                                <Button fx:id="btnPrint" mnemonicParsing="false" onAction="#print" prefHeight="44.0" prefWidth="452.0" style="-fx-background-color: #595A5B;" text="Wydrukuj" textFill="WHITE">
+                                                    <font>
+                                                        <Font size="20.0" />
+                                                    </font>
+                                                </Button>
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </HBox>
+                                <HBox alignment="CENTER" layoutX="955.0" layoutY="14.0" prefHeight="35.0" prefWidth="200.0" spacing="20.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+                                    <children>
+                                        <ImageView fx:id="btnMin5" fitHeight="35.0" fitWidth="35.0" onMouseClicked="#minMaxClose" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@min.png" />
+                                            </image>
+                                        </ImageView>
+                                        <ImageView fx:id="btnMax5" fitHeight="35.0" fitWidth="35.0" onMouseClicked="#minMaxClose" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@max.png" />
+                                            </image>
+                                        </ImageView>
+                                        <ImageView fx:id="btnClose5" fitHeight="35.0" fitWidth="35.0" onMouseClicked="#minMaxClose" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@close.png" />
+                                            </image>
+                                        </ImageView>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+        <AnchorPane fx:id="mAgentNavPane" layoutX="30.0" layoutY="30.0" prefHeight="850.0" prefWidth="178.0" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #0244A6,#23A6D7);" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <VBox layoutY="268.0" prefHeight="312.0" prefWidth="205.0">
+                    <children>
+                        <HBox fx:id="btnMGAgent" alignment="CENTER" onMouseClicked="#changeManagerTabs" prefHeight="75.0" prefWidth="200.0" spacing="10.0" style="-fx-background-color: #16D2A5;">
+                            <children>
+                                <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@manager.png" />
+                                    </image>
+                                </ImageView>
+                                <Label prefHeight="50.0" prefWidth="120.0" text="Agent" textFill="WHITE">
+                                    <font>
+                                        <Font size="20.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+                        <HBox fx:id="btnMGCus" alignment="CENTER" onMouseClicked="#changeManagerTabs" prefHeight="75.0" prefWidth="200.0" spacing="10.0">
+                            <children>
+                                <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@customer.png" />
+                                    </image>
+                                </ImageView>
+                                <Label prefHeight="50.0" prefWidth="120.0" text="Klient" textFill="WHITE">
+                                    <font>
+                                        <Font size="20.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+                        <HBox fx:id="btnMGPoli" alignment="CENTER" onMouseClicked="#changeManagerTabs" prefHeight="75.0" prefWidth="200.0" spacing="10.0">
+                            <children>
+                                <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@policy.png" />
+                                    </image>
+                                </ImageView>
+                                <Label prefHeight="50.0" prefWidth="120.0" text="Polisa" textFill="WHITE">
+                                    <font>
+                                        <Font size="20.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+                        <HBox fx:id="btnMGPayment" alignment="CENTER" onMouseClicked="#changeManagerTabs" prefHeight="75.0" prefWidth="200.0" spacing="10.0">
+                            <children>
+                                <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@payment.png" />
+                                    </image>
+                                </ImageView>
+                                <Label prefHeight="50.0" prefWidth="120.0" text="Płatność" textFill="WHITE">
+                                    <font>
+                                        <Font size="20.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+                <HBox alignment="CENTER" layoutY="783.0" onMouseClicked="#logout" prefHeight="51.0" prefWidth="205.0" spacing="10.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                    <children>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@logout.png" />
+                            </image>
+                        </ImageView>
+                        <Label prefHeight="50.0" prefWidth="90.0" text="Wyloguj" textFill="WHITE">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER" layoutY="23.0" prefHeight="73.0" prefWidth="205.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="23.0">
+                    <children>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@insurance.png" />
+                            </image>
+                        </ImageView>
+                        <VBox prefHeight="100.0" prefWidth="191.0">
+                            <children>
+                                <Label text="Firma" textFill="WHITE">
+                                    <font>
+                                        <Font size="30.0" />
+                                    </font>
+                                </Label>
+                                <Label text="Ubezpieczeniowa" textFill="WHITE" />
+                                <Label text="Panel Menadżer" textFill="WHITE" />
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+            </children>
+        </AnchorPane>
+        <TabPane fx:id="custTabPane" layoutX="20.0" layoutY="20.0" prefHeight="200.0" prefWidth="200.0" side="LEFT" style="-fx-background-color: #FFFFFF;" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <tabs>
+                <Tab text="Agent">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <VBox alignment="CENTER_LEFT" layoutY="72.0" prefHeight="766.0" prefWidth="957.0" spacing="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="197.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="72.0">
+                                    <children>
+                                        <VBox prefHeight="103.0" prefWidth="170.0" spacing="15.0">
+                                            <children>
+                                                <Label text="Agent detale:">
+                                                    <font>
+                                                        <Font size="20.0" />
+                                                    </font>
+                                                </Label>
+                                                <Line endX="300.0" />
+                                                <Button fx:id="btnCusAgentExport" mnemonicParsing="false" onAction="#exportDataToExcel" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: #217346;" text="Eksport danych" textFill="WHITE">
+                                                    <font>
+                                                        <Font size="20.0" />
+                                                    </font>
+                                                </Button>
+                                            </children>
+                                        </VBox>
+                                        <TableView fx:id="customerAgentTable" prefHeight="889.0" prefWidth="957.0" />
+                                    </children>
+                                </VBox>
+                                <HBox alignment="CENTER" layoutX="955.0" layoutY="14.0" prefHeight="35.0" prefWidth="200.0" spacing="20.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+                                    <children>
+                                        <ImageView fx:id="btnMin51" fitHeight="35.0" fitWidth="35.0" onMouseClicked="#minMaxClose" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@min.png" />
+                                            </image>
+                                        </ImageView>
+                                        <ImageView fx:id="btnMax51" fitHeight="35.0" fitWidth="35.0" onMouseClicked="#minMaxClose" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@max.png" />
+                                            </image>
+                                        </ImageView>
+                                        <ImageView fx:id="btnClose51" fitHeight="35.0" fitWidth="35.0" onMouseClicked="#minMaxClose" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@close.png" />
+                                            </image>
+                                        </ImageView>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Polisa">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <VBox alignment="CENTER_LEFT" layoutX="197.0" layoutY="78.0" prefHeight="760.0" prefWidth="957.0" spacing="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="197.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="78.0">
+                                    <children>
+                                        <VBox prefHeight="103.0" prefWidth="170.0" spacing="15.0">
+                                            <children>
+                                                <Label text="Polisa detale:">
+                                                    <font>
+                                                        <Font size="20.0" />
+                                                    </font>
+                                                </Label>
+                                                <Line endX="300.0" />
+                                                <Button fx:id="btnCustPoliExport" mnemonicParsing="false" onAction="#exportDataToExcel" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: #217346;" text="Eksport danych" textFill="WHITE">
+                                                    <font>
+                                                        <Font size="20.0" />
+                                                    </font>
+                                                </Button>
+                                            </children>
+                                        </VBox>
+                                        <TableView fx:id="customerPolicyTable" onMouseClicked="#loadPolicyDataToForm" prefHeight="889.0" prefWidth="958.0" />
+                                    </children>
+                                </VBox>
+                                <HBox alignment="CENTER" layoutX="955.0" layoutY="14.0" prefHeight="35.0" prefWidth="200.0" spacing="20.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+                                    <children>
+                                        <ImageView fx:id="btnMin511" fitHeight="35.0" fitWidth="35.0" onMouseClicked="#minMaxClose" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@min.png" />
+                                            </image>
+                                        </ImageView>
+                                        <ImageView fx:id="btnMax511" fitHeight="35.0" fitWidth="35.0" onMouseClicked="#minMaxClose" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@max.png" />
+                                            </image>
+                                        </ImageView>
+                                        <ImageView fx:id="btnClose511" fitHeight="35.0" fitWidth="35.0" onMouseClicked="#minMaxClose" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@close.png" />
+                                            </image>
+                                        </ImageView>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab fx:id="btnCusExport1" text="Status Polisy">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <VBox alignment="CENTER_LEFT" layoutY="74.0" prefHeight="760.0" prefWidth="957.0" spacing="10.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="197.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="74.0">
+                                    <children>
+                                        <VBox prefHeight="103.0" prefWidth="170.0" spacing="15.0">
+                                            <children>
+                                                <Label text="Polisa status:">
+                                                    <font>
+                                                        <Font size="20.0" />
+                                                    </font>
+                                                </Label>
+                                                <Line endX="300.0" />
+                                            </children>
+                                        </VBox>
+                                        <TableView fx:id="custPoliStatTable" onMouseClicked="#loadPolicyDataToForm" prefHeight="889.0" prefWidth="958.0" />
+                                    </children>
+                                </VBox>
+                                <HBox alignment="CENTER" layoutX="954.0" layoutY="14.0" prefHeight="35.0" prefWidth="200.0" spacing="20.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+                                    <children>
+                                        <ImageView fx:id="btnMin512" fitHeight="35.0" fitWidth="35.0" onMouseClicked="#minMaxClose" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@min.png" />
+                                            </image>
+                                        </ImageView>
+                                        <ImageView fx:id="btnMax512" fitHeight="35.0" fitWidth="35.0" onMouseClicked="#minMaxClose" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@max.png" />
+                                            </image>
+                                        </ImageView>
+                                        <ImageView fx:id="btnClose512" fitHeight="35.0" fitWidth="35.0" onMouseClicked="#minMaxClose" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@close.png" />
+                                            </image>
+                                        </ImageView>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+        <AnchorPane fx:id="custNavPane" layoutX="20.0" layoutY="20.0" prefHeight="850.0" prefWidth="178.0" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #0244A6,#23A6D7);" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <VBox layoutY="268.0" prefHeight="312.0" prefWidth="205.0">
+                    <children>
+                        <HBox fx:id="btnCusAgent" alignment="CENTER" onMouseClicked="#changeCustomerTabs" prefHeight="75.0" prefWidth="200.0" spacing="10.0" style="-fx-background-color: #16D2A5;">
+                            <children>
+                                <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@manager.png" />
+                                    </image>
+                                </ImageView>
+                                <Label prefHeight="50.0" prefWidth="120.0" text="Agent" textFill="WHITE">
+                                    <font>
+                                        <Font size="20.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+                        <HBox fx:id="btnCusPolicy" alignment="CENTER" onMouseClicked="#changeCustomerTabs" prefHeight="75.0" prefWidth="200.0" spacing="10.0">
+                            <children>
+                                <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@policy.png" />
+                                    </image>
+                                </ImageView>
+                                <Label prefHeight="50.0" prefWidth="120.0" text="Polisa" textFill="WHITE">
+                                    <font>
+                                        <Font size="20.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+                        <HBox fx:id="btnCusPoliStat" alignment="CENTER" onMouseClicked="#changeCustomerTabs" prefHeight="75.0" prefWidth="200.0" spacing="10.0">
+                            <children>
+                                <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@policyStatus.png" />
+                                    </image>
+                                </ImageView>
+                                <Label prefHeight="50.0" prefWidth="120.0" text="Polisa status" textFill="WHITE">
+                                    <font>
+                                        <Font size="20.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+                <HBox alignment="CENTER" layoutY="783.0" onMouseClicked="#logout" prefHeight="51.0" prefWidth="205.0" spacing="10.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                    <children>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@logout.png" />
+                            </image>
+                        </ImageView>
+                        <Label prefHeight="50.0" prefWidth="84.0" text="Wyloguj" textFill="WHITE">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER" layoutY="23.0" prefHeight="73.0" prefWidth="205.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="23.0">
+                    <children>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@insurance.png" />
+                            </image>
+                        </ImageView>
+                        <VBox prefHeight="100.0" prefWidth="191.0">
+                            <children>
+                                <Label text="Firma" textFill="WHITE">
+                                    <font>
+                                        <Font size="30.0" />
+                                    </font>
+                                </Label>
+                                <Label text="Ubezpieczeniowa" textFill="WHITE" />
+                                <Label text="Panel Klienta" textFill="WHITE" />
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+            </children>
+        </AnchorPane>
+        <TabPane fx:id="agentTabPane" layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" side="LEFT" style="-fx-background-color: #FFFFFF;" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <tabs>
+                <Tab text="Menadżer">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <VBox alignment="CENTER_LEFT" layoutY="78.0" prefHeight="760.0" prefWidth="957.0" spacing="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="197.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="78.0">
+                                    <children>
+                                        <VBox prefHeight="103.0" prefWidth="170.0" spacing="15.0">
+                                            <children>
+                                                <Label text="Menadżer detale:">
+                                                    <font>
+                                                        <Font size="20.0" />
+                                                    </font>
+                                                </Label>
+                                                <Line endX="300.0" />
+                                                <Button fx:id="btnAgentMGExport" mnemonicParsing="false" onAction="#exportDataToExcel" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: #217346;" text="Eksport danych" textFill="WHITE">
+                                                    <font>
+                                                        <Font size="20.0" />
+                                                    </font>
+                                                </Button>
+                                            </children>
+                                        </VBox>
+                                        <TableView fx:id="agentManagerTable" prefHeight="889.0" prefWidth="957.0" />
+                                    </children>
+                                </VBox>
+                                <HBox alignment="CENTER" layoutX="954.0" layoutY="14.0" prefHeight="35.0" prefWidth="200.0" spacing="20.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+                                    <children>
+                                        <ImageView fx:id="btnMinMG1" fitHeight="35.0" fitWidth="35.0" onMouseClicked="#minMaxClose" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@min.png" />
+                                            </image>
+                                        </ImageView>
+                                        <ImageView fx:id="btnMaxMG1" fitHeight="35.0" fitWidth="35.0" onMouseClicked="#minMaxClose" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@max.png" />
+                                            </image>
+                                        </ImageView>
+                                        <ImageView fx:id="btnCloseMG1" fitHeight="35.0" fitWidth="35.0" onMouseClicked="#minMaxClose" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@close.png" />
+                                            </image>
+                                        </ImageView>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Klient detale polisy">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <VBox alignment="CENTER_LEFT" layoutX="197.0" layoutY="78.0" prefHeight="760.0" prefWidth="957.0" spacing="10.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="197.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="78.0">
+                                    <children>
+                                        <VBox prefHeight="103.0" prefWidth="170.0" spacing="15.0">
+                                            <children>
+                                                <Label text="Polisa detale:">
+                                                    <font>
+                                                        <Font size="20.0" />
+                                                    </font>
+                                                </Label>
+                                                <Line endX="300.0" />
+                                                <Button fx:id="btnPoliExport" mnemonicParsing="false" onAction="#exportDataToExcel" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: #217346;" text="Eksport danych" textFill="WHITE">
+                                                    <font>
+                                                        <Font size="20.0" />
+                                                    </font>
+                                                </Button>
+                                            </children>
+                                        </VBox>
+                                        <TableView fx:id="agentCustomerPolicyTable" onMouseClicked="#loadPolicyDataToForm" prefHeight="889.0" prefWidth="958.0" />
+                                    </children>
+                                </VBox>
+                                <HBox alignment="CENTER" layoutX="954.0" layoutY="14.0" prefHeight="35.0" prefWidth="200.0" spacing="20.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+                                    <children>
+                                        <ImageView fx:id="btnMinMG2" fitHeight="35.0" fitWidth="35.0" onMouseClicked="#minMaxClose" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@min.png" />
+                                            </image>
+                                        </ImageView>
+                                        <ImageView fx:id="btnMaxMG2" fitHeight="35.0" fitWidth="35.0" onMouseClicked="#minMaxClose" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@max.png" />
+                                            </image>
+                                        </ImageView>
+                                        <ImageView fx:id="btnCloseMG2" fitHeight="35.0" fitWidth="35.0" onMouseClicked="#minMaxClose" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@close.png" />
+                                            </image>
+                                        </ImageView>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab fx:id="btnCusExport" text="Klient detale">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <VBox alignment="CENTER_LEFT" layoutY="74.0" prefHeight="760.0" prefWidth="957.0" spacing="10.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="197.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="74.0">
+                                    <children>
+                                        <VBox prefHeight="103.0" prefWidth="170.0" spacing="15.0">
+                                            <children>
+                                                <Label text="Klient detale:">
+                                                    <font>
+                                                        <Font size="20.0" />
+                                                    </font>
+                                                </Label>
+                                                <Line endX="300.0" />
+                                                <Button fx:id="btnCustExport" mnemonicParsing="false" onAction="#exportDataToExcel" prefHeight="50.0" prefWidth="300.0" style="-fx-background-color: #217346;" text="Eksport danych" textFill="WHITE">
+                                                    <font>
+                                                        <Font size="20.0" />
+                                                    </font>
+                                                </Button>
+                                            </children>
+                                        </VBox>
+                                        <TableView fx:id="agentCustomerDetailsTable" onMouseClicked="#loadPolicyDataToForm" prefHeight="889.0" prefWidth="958.0" />
+                                    </children>
+                                </VBox>
+                                <HBox alignment="CENTER" layoutX="954.0" layoutY="14.0" prefHeight="35.0" prefWidth="200.0" spacing="20.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+                                    <children>
+                                        <ImageView fx:id="btnMinMG3" fitHeight="35.0" fitWidth="35.0" onMouseClicked="#minMaxClose" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@min.png" />
+                                            </image>
+                                        </ImageView>
+                                        <ImageView fx:id="btnMaxMG3" fitHeight="35.0" fitWidth="35.0" onMouseClicked="#minMaxClose" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@max.png" />
+                                            </image>
+                                        </ImageView>
+                                        <ImageView fx:id="btnCloseMG3" fitHeight="35.0" fitWidth="35.0" onMouseClicked="#minMaxClose" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@close.png" />
+                                            </image>
+                                        </ImageView>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+        <AnchorPane fx:id="agentNavPane" layoutX="10.0" layoutY="10.0" prefHeight="850.0" prefWidth="178.0" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #0244A6,#23A6D7);" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <VBox layoutY="268.0" prefHeight="312.0" prefWidth="205.0">
+                    <children>
+                        <HBox fx:id="btnAgentMG" alignment="CENTER" onMouseClicked="#changeAgentTabs" prefHeight="75.0" prefWidth="200.0" spacing="10.0" style="-fx-background-color: #16D2A5;">
+                            <children>
+                                <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@manager.png" />
+                                    </image>
+                                </ImageView>
+                                <Label prefHeight="50.0" prefWidth="120.0" text="Menadżer" textFill="WHITE">
+                                    <font>
+                                        <Font size="20.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+                        <HBox fx:id="btnAgentPolicy" alignment="CENTER" onMouseClicked="#changeAgentTabs" prefHeight="75.0" prefWidth="200.0" spacing="10.0">
+                            <children>
+                                <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@policy.png" />
+                                    </image>
+                                </ImageView>
+                                <Label prefHeight="50.0" prefWidth="120.0" text="Polisa" textFill="WHITE">
+                                    <font>
+                                        <Font size="20.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+                        <HBox fx:id="btnAgentCustomer" alignment="CENTER" onMouseClicked="#changeAgentTabs" prefHeight="75.0" prefWidth="200.0" spacing="10.0">
+                            <children>
+                                <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@customer.png" />
+                                    </image>
+                                </ImageView>
+                                <Label prefHeight="50.0" prefWidth="120.0" text="Klient" textFill="WHITE">
+                                    <font>
+                                        <Font size="20.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+                <HBox alignment="CENTER" layoutY="783.0" onMouseClicked="#logout" prefHeight="51.0" prefWidth="205.0" spacing="10.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                    <children>
+                        <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@logout.png" />
+                            </image>
+                        </ImageView>
+                        <Label prefHeight="50.0" prefWidth="84.0" text="Wyloguj" textFill="WHITE">
+                            <font>
+                                <Font size="20.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER" layoutY="23.0" prefHeight="73.0" prefWidth="205.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="23.0">
+                    <children>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@insurance.png" />
+                            </image>
+                        </ImageView>
+                        <VBox prefHeight="100.0" prefWidth="191.0">
+                            <children>
+                                <Label prefHeight="45.0" prefWidth="179.0" text="Firma" textFill="WHITE">
+                                    <font>
+                                        <Font size="30.0" />
+                                    </font>
+                                </Label>
+                                <Label text="Ubezpieczeniowa" textFill="WHITE" />
+                                <Label text="Panel Agenta" textFill="WHITE" />
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+            </children>
+        </AnchorPane>
+        <AnchorPane fx:id="loginForm" layoutX="2.0" layoutY="2.0" prefHeight="667.0" prefWidth="1198.0" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%, #0244A6,#23A6D7);" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Label layoutX="124.0" layoutY="402.0" prefHeight="73.0" prefWidth="467.0" text="System" textFill="WHITE" AnchorPane.leftAnchor="124.0" AnchorPane.rightAnchor="607.0">
+                    <font>
+                        <Font size="50.0" />
+                    </font>
+                </Label>
+                <Label layoutX="124.0" layoutY="475.0" prefHeight="73.0" prefWidth="487.0" text="Ubezpieczeniowy" textFill="WHITE" AnchorPane.leftAnchor="124.0" AnchorPane.rightAnchor="589.0">
+                    <font>
+                        <Font size="50.0" />
+                    </font>
+                </Label>
+                <VBox alignment="CENTER" layoutX="29.0" layoutY="28.0" prefHeight="59.0" prefWidth="130.0" AnchorPane.leftAnchor="29.0" AnchorPane.topAnchor="28.0">
+                    <children>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                            <children>
+                                <Circle fill="WHITE" opacity="0.46" radius="5.0" stroke="WHITE" strokeType="INSIDE" />
+                                <Circle fill="WHITE" opacity="0.46" radius="5.0" stroke="WHITE" strokeType="INSIDE" />
+                                <Circle fill="WHITE" opacity="0.46" radius="5.0" stroke="WHITE" strokeType="INSIDE" />
+                                <Circle fill="WHITE" opacity="0.46" radius="5.0" stroke="WHITE" strokeType="INSIDE" />
+                                <Circle fill="WHITE" opacity="0.46" radius="5.0" stroke="WHITE" strokeType="INSIDE" />
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                            <children>
+                                <Circle fill="WHITE" opacity="0.46" radius="5.0" stroke="WHITE" strokeType="INSIDE" />
+                                <Circle fill="WHITE" opacity="0.46" radius="5.0" stroke="WHITE" strokeType="INSIDE" />
+                                <Circle fill="WHITE" opacity="0.46" radius="5.0" stroke="WHITE" strokeType="INSIDE" />
+                                <Circle fill="WHITE" opacity="0.46" radius="5.0" stroke="WHITE" strokeType="INSIDE" />
+                                <Circle fill="WHITE" opacity="0.46" radius="5.0" stroke="WHITE" strokeType="INSIDE" />
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                            <children>
+                                <Circle fill="WHITE" opacity="0.46" radius="5.0" stroke="WHITE" strokeType="INSIDE" />
+                                <Circle fill="WHITE" opacity="0.46" radius="5.0" stroke="WHITE" strokeType="INSIDE" />
+                                <Circle fill="WHITE" opacity="0.46" radius="5.0" stroke="WHITE" strokeType="INSIDE" />
+                                <Circle fill="WHITE" opacity="0.46" radius="5.0" stroke="WHITE" strokeType="INSIDE" />
+                                <Circle fill="WHITE" opacity="0.46" radius="5.0" stroke="WHITE" strokeType="INSIDE" />
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                            <children>
+                                <Circle fill="WHITE" opacity="0.46" radius="5.0" stroke="WHITE" strokeType="INSIDE" />
+                                <Circle fill="WHITE" opacity="0.46" radius="5.0" stroke="WHITE" strokeType="INSIDE" />
+                                <Circle fill="WHITE" opacity="0.46" radius="5.0" stroke="WHITE" strokeType="INSIDE" />
+                                <Circle fill="WHITE" opacity="0.46" radius="5.0" stroke="WHITE" strokeType="INSIDE" />
+                                <Circle fill="WHITE" opacity="0.46" radius="5.0" stroke="WHITE" strokeType="INSIDE" />
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+                <VBox alignment="CENTER" layoutX="553.0" layoutY="754.0" prefHeight="59.0" prefWidth="130.0" AnchorPane.bottomAnchor="37.0" AnchorPane.rightAnchor="517.0">
+                    <children>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                            <children>
+                                <Circle fill="WHITE" opacity="0.46" radius="5.0" stroke="WHITE" strokeType="INSIDE" />
+                                <Circle fill="WHITE" opacity="0.46" radius="5.0" stroke="WHITE" strokeType="INSIDE" />
+                                <Circle fill="WHITE" opacity="0.46" radius="5.0" stroke="WHITE" strokeType="INSIDE" />
+                                <Circle fill="WHITE" opacity="0.46" radius="5.0" stroke="WHITE" strokeType="INSIDE" />
+                                <Circle fill="WHITE" opacity="0.46" radius="5.0" stroke="WHITE" strokeType="INSIDE" />
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                            <children>
+                                <Circle fill="WHITE" opacity="0.46" radius="5.0" stroke="WHITE" strokeType="INSIDE" />
+                                <Circle fill="WHITE" opacity="0.46" radius="5.0" stroke="WHITE" strokeType="INSIDE" />
+                                <Circle fill="WHITE" opacity="0.46" radius="5.0" stroke="WHITE" strokeType="INSIDE" />
+                                <Circle fill="WHITE" opacity="0.46" radius="5.0" stroke="WHITE" strokeType="INSIDE" />
+                                <Circle fill="WHITE" opacity="0.46" radius="5.0" stroke="WHITE" strokeType="INSIDE" />
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                            <children>
+                                <Circle fill="WHITE" opacity="0.46" radius="5.0" stroke="WHITE" strokeType="INSIDE" />
+                                <Circle fill="WHITE" opacity="0.46" radius="5.0" stroke="WHITE" strokeType="INSIDE" />
+                                <Circle fill="WHITE" opacity="0.46" radius="5.0" stroke="WHITE" strokeType="INSIDE" />
+                                <Circle fill="WHITE" opacity="0.46" radius="5.0" stroke="WHITE" strokeType="INSIDE" />
+                                <Circle fill="WHITE" opacity="0.46" radius="5.0" stroke="WHITE" strokeType="INSIDE" />
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                            <children>
+                                <Circle fill="WHITE" opacity="0.46" radius="5.0" stroke="WHITE" strokeType="INSIDE" />
+                                <Circle fill="WHITE" opacity="0.46" radius="5.0" stroke="WHITE" strokeType="INSIDE" />
+                                <Circle fill="WHITE" opacity="0.46" radius="5.0" stroke="WHITE" strokeType="INSIDE" />
+                                <Circle fill="WHITE" opacity="0.46" radius="5.0" stroke="WHITE" strokeType="INSIDE" />
+                                <Circle fill="WHITE" opacity="0.46" radius="5.0" stroke="WHITE" strokeType="INSIDE" />
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+                <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="124.0" layoutY="302.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="124.0" AnchorPane.rightAnchor="864.0">
+                    <image>
+                        <Image url="@insurance.png" />
+                    </image>
+                </ImageView>
+                <AnchorPane layoutX="701.0" layoutY="20.0" prefHeight="810.0" prefWidth="478.0" style="-fx-background-color: #FFFFFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <VBox alignment="CENTER_LEFT" layoutX="48.0" layoutY="172.0" prefHeight="506.0" prefWidth="382.0" spacing="15.0" AnchorPane.bottomAnchor="172.0" AnchorPane.leftAnchor="48.0" AnchorPane.rightAnchor="48.0" AnchorPane.topAnchor="172.0">
+                            <children>
+                                <Label text="Logowanie">
+                                    <font>
+                                        <Font name="System Bold" size="35.0" />
+                                    </font>
+                                </Label>
+                                <Label text="Nazwa użytkownika" textFill="#a19d9d" />
+                                <TextField fx:id="inpUsername" prefHeight="50.0" promptText="nazwa użytkownika" style="-fx-background-color: #FFFFFF; -fx-border-color: #DDDDDD; -fx-background-radius: 15px; -fx-border-radius: 10px;" />
+                                <Label text="Hasło" textFill="#a19d9d" />
+                                <PasswordField fx:id="inpPassword" prefHeight="50.0" promptText="hasło" style="-fx-background-color: #FFFFFF; -fx-border-color: #DDDDDD; -fx-background-radius: 10px; -fx-border-radius: 10px;" />
+                                <Label text="Role" textFill="#a19d9d" />
+                                <HBox prefHeight="50.0" prefWidth="200.0" spacing="30.0">
+                                    <children>
+                                        <RadioButton fx:id="rdCus" mnemonicParsing="false" text="Klient">
+                                            <font>
+                                                <Font name="System Bold" size="12.0" />
+                                            </font>
+                                        </RadioButton>
+                                        <RadioButton fx:id="rdManager" mnemonicParsing="false" text="Menadżer">
+                                            <font>
+                                                <Font name="System Bold" size="12.0" />
+                                            </font>
+                                        </RadioButton>
+                                        <RadioButton fx:id="rdAgent" mnemonicParsing="false" text="Agent">
+                                            <font>
+                                                <Font name="System Bold" size="12.0" />
+                                            </font>
+                                        </RadioButton>
+                                    </children>
+                                </HBox>
+                                <ComboBox fx:id="drpRole" prefHeight="50.0" prefWidth="500.0" promptText="Choose Role" style="-fx-background-color: #FFFFFF; -fx-border-color: #DDDDDD; -fx-background-radius: 10px; -fx-border-radius: 10px;" visible="false" />
+                                <Button fx:id="btnLogin" mnemonicParsing="false" onAction="#login" prefHeight="50.0" prefWidth="500.0" style="-fx-background-color: linear-gradient(from 25% 25% to 100% 100%,#23A6D7,#0244A6); -fx-background-radius: 10px; -fx-border-radius: 10px;" text="ZALOGUJ" textFill="WHITE" />
+                            </children>
+                        </VBox>
+                        <HBox alignment="CENTER" layoutX="264.0" layoutY="14.0" prefHeight="35.0" prefWidth="200.0" spacing="20.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+                            <children>
+                                <ImageView fx:id="btnMin" fitHeight="35.0" fitWidth="35.0" onMouseClicked="#minMaxClose" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@min.png" />
+                                    </image>
+                                </ImageView>
+                                <ImageView fx:id="btnMax" fitHeight="35.0" fitWidth="35.0" onMouseClicked="#minMaxClose" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@max.png" />
+                                    </image>
+                                </ImageView>
+                                <ImageView fx:id="btnClose" fitHeight="35.0" fitWidth="35.0" onMouseClicked="#minMaxClose" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@close.png" />
+                                    </image>
+                                </ImageView>
+                            </children>
+                        </HBox>
+                        <RadioButton fx:id="rdAdmin" layoutX="396.0" layoutY="802.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="76.0" text="Admin">
+                            <font>
+                                <Font name="System Bold" size="12.0" />
+                            </font>
+                        </RadioButton>
+                    </children>
+                </AnchorPane>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

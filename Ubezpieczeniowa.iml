@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="EclipseModuleManager">
+    <libelement value="jar://$MODULE_DIR$/externalJars/mysql-connector-java-8.0.27.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/externalJars/commons-codec-1.6.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/externalJars/commons-io-2.11.0.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/externalJars/commons-io-2.11.0-javadoc.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/externalJars/commons-io-2.11.0-sources.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/externalJars/commons-io-2.11.0-tests.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/externalJars/commons-io-2.11.0-test-sources.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/externalJars/commons-lang3-3.12.0.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/externalJars/commons-lang3-3.12.0-javadoc.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/externalJars/commons-lang3-3.12.0-sources.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/externalJars/commons-lang3-3.12.0-tests.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/externalJars/commons-lang3-3.12.0-test-sources.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/externalJars/commons-logging-1.1.3.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/externalJars/log4j-1.2.13.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/externalJars/curvesapi-1.06.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/externalJars/fontbox-2.0.22.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/externalJars/graphics2d-0.30.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/externalJars/pdfbox-2.0.22.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/externalJars/poi-5.0.0.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/externalJars/poi-examples-5.0.0.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/externalJars/poi-excelant-5.0.0.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/externalJars/poi-integration-5.0.0.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/externalJars/poi-ooxml-5.0.0.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/externalJars/poi-ooxml-full-5.0.0.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/externalJars/poi-ooxml-lite-5.0.0.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/externalJars/poi-scratchpad-5.0.0.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/externalJars/xml-apis-ext-1.3.04.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/externalJars/xmlbeans-4.0.0.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/externalJars/xmlgraphics-commons-2.4.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/externalJars/xmlsec-2.2.1.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/externalJars/batik-all-1.13.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/externalJars/bcpkix-jdk15on-1.68.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/externalJars/bcprov-jdk15on-1.68.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/externalJars/commons-codec-1.15.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/externalJars/commons-collections4-4.4.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/externalJars/commons-compress-1.20.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/externalJars/commons-io-2.10.0.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/externalJars/commons-io-2.10.0-javadoc.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/externalJars/commons-io-2.10.0-sources.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/externalJars/commons-io-2.10.0-tests.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/externalJars/commons-io-2.10.0-test-sources.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/externalJars/commons-math3-3.6.1.jar!/" />
+    <libelement value="jar://$MODULE_DIR$/externalJars/SparseBitSet-1.2.jar!/" />
+    <conelement value="org.eclipse.fx.ide.jdt.core.JAVAFX_CONTAINER" />
+    <src_description expected_position="0">
+      <src_folder value="file://$MODULE_DIR$/src" expected_position="0" />
+    </src_description>
+  </component>
+  <component name="NewModuleRootManager">
+    <output url="file://$MODULE_DIR$/bin" />
+    <exclude-output />
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
+    </content>
+    <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="org.eclipse.fx.ide.jdt.core.JAVAFX_CONTAINER" level="application" />
+    <orderEntry type="module-library">
+      <library name="mysql-connector-java-8.0.27.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/externalJars/mysql-connector-java-8.0.27.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="commons-codec-1.6.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/externalJars/commons-codec-1.6.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="commons-io-2.11.0.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/externalJars/commons-io-2.11.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="commons-io-2.11.0-javadoc.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/externalJars/commons-io-2.11.0-javadoc.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="commons-io-2.11.0-sources.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/externalJars/commons-io-2.11.0-sources.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="commons-io-2.11.0-tests.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/externalJars/commons-io-2.11.0-tests.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="commons-io-2.11.0-test-sources.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/externalJars/commons-io-2.11.0-test-sources.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="commons-lang3-3.12.0.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/externalJars/commons-lang3-3.12.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="commons-lang3-3.12.0-javadoc.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/externalJars/commons-lang3-3.12.0-javadoc.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="commons-lang3-3.12.0-sources.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/externalJars/commons-lang3-3.12.0-sources.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="commons-lang3-3.12.0-tests.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/externalJars/commons-lang3-3.12.0-tests.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="commons-lang3-3.12.0-test-sources.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/externalJars/commons-lang3-3.12.0-test-sources.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="commons-logging-1.1.3.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/externalJars/commons-logging-1.1.3.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="log4j-1.2.13.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/externalJars/log4j-1.2.13.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="curvesapi-1.06.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/externalJars/curvesapi-1.06.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="fontbox-2.0.22.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/externalJars/fontbox-2.0.22.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="graphics2d-0.30.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/externalJars/graphics2d-0.30.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="pdfbox-2.0.22.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/externalJars/pdfbox-2.0.22.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="poi-5.0.0.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/externalJars/poi-5.0.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="poi-examples-5.0.0.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/externalJars/poi-examples-5.0.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="poi-excelant-5.0.0.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/externalJars/poi-excelant-5.0.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="poi-integration-5.0.0.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/externalJars/poi-integration-5.0.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="poi-ooxml-5.0.0.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/externalJars/poi-ooxml-5.0.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="poi-ooxml-full-5.0.0.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/externalJars/poi-ooxml-full-5.0.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="poi-ooxml-lite-5.0.0.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/externalJars/poi-ooxml-lite-5.0.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="poi-scratchpad-5.0.0.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/externalJars/poi-scratchpad-5.0.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="xml-apis-ext-1.3.04.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/externalJars/xml-apis-ext-1.3.04.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="xmlbeans-4.0.0.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/externalJars/xmlbeans-4.0.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="xmlgraphics-commons-2.4.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/externalJars/xmlgraphics-commons-2.4.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="xmlsec-2.2.1.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/externalJars/xmlsec-2.2.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="batik-all-1.13.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/externalJars/batik-all-1.13.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="bcpkix-jdk15on-1.68.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/externalJars/bcpkix-jdk15on-1.68.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="bcprov-jdk15on-1.68.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/externalJars/bcprov-jdk15on-1.68.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="commons-codec-1.15.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/externalJars/commons-codec-1.15.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="commons-collections4-4.4.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/externalJars/commons-collections4-4.4.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="commons-compress-1.20.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/externalJars/commons-compress-1.20.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="commons-io-2.10.0.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/externalJars/commons-io-2.10.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="commons-io-2.10.0-javadoc.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/externalJars/commons-io-2.10.0-javadoc.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="commons-io-2.10.0-sources.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/externalJars/commons-io-2.10.0-sources.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="commons-io-2.10.0-tests.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/externalJars/commons-io-2.10.0-tests.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="commons-io-2.10.0-test-sources.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/externalJars/commons-io-2.10.0-test-sources.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="commons-math3-3.6.1.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/externalJars/commons-math3-3.6.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="SparseBitSet-1.2.jar">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/externalJars/SparseBitSet-1.2.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" name="itextpdf-5.5.13.2" level="project" />
+    <orderEntry type="library" name="junit5-4.2.9" level="project" />
+    <orderEntry type="library" name="junit-jupiter-api-5.8.2" level="project" />
+    <orderEntry type="library" name="junit-platform-commons-1.5.2" level="project" />
+  </component>
+</module>
